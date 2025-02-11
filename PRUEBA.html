@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARAMETROS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #d3d3d3; /* Fondo gris */
+        }
+        .container {
+            border: 3px solid black; /* Marco negro */
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px; /* Espacio debajo del recuadro */
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .controls button {
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+        .log {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .names {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px; /* Espacio entre el control y los nombres */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PARÁMETROS</h1>
+        <div class="controls">
+            <div></div>
+            <button onclick="sendCommand('Parametros Fisicos')">FISICAS</button>
+            <div></div>
+            <div></div>
+            <button onclick="sendCommand('Parametros en HMI')">HMI</button>
+            <div></div>
+        </div>
+        <div class="log" id="log">ALPHALAB</div>
+    </div>
+
+    
+
+    <script>
+        function sendCommand(command) {
+            // Aquí puedes enviar el comando al carrito a través de un servidor o protocolo
+            console.log(`Comando enviado: ${command}`);
+            const log = document.getElementById('log');
+            log.innerHTML = `Ir a: ${command}`;
+        }
+    </script>
+</body>
+</html>
